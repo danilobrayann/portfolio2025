@@ -5,10 +5,12 @@ import { useRef } from "react";
 const skills = [
   { name: "React", level: 95 },
   { name: "TypeScript", level: 90 },
+  { name: "Javascript", level: 90 },
   { name: "Node.js", level: 85 },
   { name: "Next.js", level: 88 },
   { name: "Tailwind CSS", level: 92 },
   { name: "PostgreSQL", level: 80 },
+  { name: "Docker", level: 75 },
 ];
 
 const technologies = [
@@ -18,16 +20,12 @@ const technologies = [
   { name: "Next.js", icon: "▲" },
   { name: "Tailwind CSS", icon: "🎨" },
   { name: "PostgreSQL", icon: "🐘" },
-  { name: "MongoDB", icon: "🍃" },
-  { name: "GraphQL", icon: "◈" },
   { name: "Docker", icon: "🐳" },
   { name: "AWS", icon: "☁️" },
   { name: "Git", icon: "📦" },
   { name: "Figma", icon: "🎯" },
-  { name: "Python", icon: "🐍" },
-  { name: "Vue.js", icon: "💚" },
-  { name: "Redis", icon: "🔴" },
   { name: "Prisma", icon: "△" },
+  { name: "Javascript", icon: "🟡" },
 ];
 
 const InfiniteMarquee = () => {
@@ -52,7 +50,11 @@ export function SkillsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden" ref={ref}>
+    <section
+      id="skills"
+      className="py-16 sm:py-24 lg:py-32 relative overflow-hidden"
+      ref={ref}
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -73,12 +75,11 @@ export function SkillsSection() {
             Habilidades
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-            Minhas{" "}
-            <span className="gradient-text">Tecnologias</span>
+            Minhas <span className="gradient-text">Tecnologias</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-2xl mx-auto">
-            Domínio das tecnologias mais modernas do mercado para criar
-            soluções completas e escaláveis.
+            Domínio das tecnologias mais modernas do mercado para criar soluções
+            completas e escaláveis.
           </p>
         </motion.div>
 
@@ -93,8 +94,12 @@ export function SkillsSection() {
               className="mb-4 sm:mb-6"
             >
               <div className="flex justify-between mb-1.5 sm:mb-2">
-                <span className="font-medium text-sm sm:text-base">{skill.name}</span>
-                <span className="text-muted-foreground text-sm sm:text-base">{skill.level}%</span>
+                <span className="font-medium text-sm sm:text-base">
+                  {skill.name}
+                </span>
+                <span className="text-muted-foreground text-sm sm:text-base">
+                  {skill.level}%
+                </span>
               </div>
               <div className="h-2 sm:h-3 rounded-full bg-secondary overflow-hidden">
                 <motion.div
@@ -102,7 +107,11 @@ export function SkillsSection() {
                   style={{ background: "var(--gradient-primary)" }}
                   initial={{ width: 0 }}
                   animate={isInView ? { width: `${skill.level}%` } : {}}
-                  transition={{ duration: 1, delay: index * 0.1 + 0.3, ease: "easeOut" }}
+                  transition={{
+                    duration: 1,
+                    delay: index * 0.1 + 0.3,
+                    ease: "easeOut",
+                  }}
                 />
               </div>
             </motion.div>
