@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Target, User } from "lucide-react";
+import {
+  ArrowDown,
+  Github,
+  Linkedin,
+  Mail,
+  User,
+  PhoneCall,
+} from "lucide-react";
 import foto from "../assets/foto perfil2.png";
+import pdf from "../assets/pdf/Danilo Dev 2025.pdf";
 
 const letterAnimation = {
   hidden: { opacity: 0, y: 50 },
@@ -267,14 +275,29 @@ export function HeroSection() {
                 </motion.a>
                 <motion.a
                   href="#projects"
-                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium glass-card hover-lift border border-border text-center text-sm sm:text-base"
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium glass-card hover-lift border border-border  text-center text-sm sm:text-base"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Ver Projetos
                 </motion.a>
               </motion.div>
-
+              <motion.a
+                animate={{ x: [0, 15, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity }}
+                target="_blank"
+                href={pdf}
+                className="flex items-center justify-center gap-8 sm:gap-4 py-4 px-4"
+                whileHover={{ x: 5 }}
+              >
+                Dowloand do CV
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  ↓
+                </motion.span>
+              </motion.a>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -282,6 +305,13 @@ export function HeroSection() {
                 className="flex justify-center lg:justify-start gap-3 sm:gap-4"
               >
                 {[
+                  {
+                    icon: PhoneCall,
+                    href: "https://api.whatsapp.com/send/?phone=5571996738280&text=ol%C3%A1+tudo+bem%2C+me+chamo+Danilo+e+sou+Desenvolvedor&type=phone_number&app_absent=0",
+                    target: "_blank",
+                    label: ".whatsapp",
+                  },
+
                   {
                     icon: Github,
                     href: "https://github.com/danilobrayann",
@@ -296,7 +326,7 @@ export function HeroSection() {
                   },
                   {
                     icon: Mail,
-                    href: "DaniloBrayann@gmail.com",
+                    href: "mailto:DaniloBrayann@gmail.com",
                     target: "_blank",
                     label: "Email",
                   },
@@ -304,6 +334,7 @@ export function HeroSection() {
                   <motion.a
                     key={social.label}
                     href={social.href}
+                    target={social.target}
                     className="p-2.5 sm:p-3 rounded-full glass-card text-muted-foreground hover:text-primary transition-colors"
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
