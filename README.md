@@ -1,73 +1,127 @@
-# React + TypeScript + Vite
+<img src="https://i.ibb.co/9H2mLvWD/Captura-de-tela-2025-12-11-190532.png"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# **Portfolio 2025**
 
-Currently, two official plugins are available:
+Um portfólio moderno, rápido e totalmente animado, desenvolvido com **React**, **Vite (Rolldown)**, **TailwindCSS**, **Framer Motion**, **shadcn/ui** e toda uma stack atualizada para 2025.
+Feito para entregar performance, estilo e experiência de usuário de primeira.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 **Tecnologias Principais**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este projeto utiliza:
 
-## Expanding the ESLint configuration
+- **React 19**
+- **Vite (rolldown-vite)** — build mais rápido e moderno
+- **TypeScript**
+- **TailwindCSS + tailwindcss-animate**
+- **shadcn/ui** + **Radix UI**
+- **Framer Motion**
+- **React Router v7**
+- **TanStack React Query**
+- **Lucide Icons**
+- **Sonner (toasts modernos)**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 **Instalação**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/SEU-USUARIO/portfolio2025.git
+cd portfolio2025
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> Recomendo usar **pnpm**, mas funciona com npm e yarn também.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🏃 **Rodando o projeto**
+
+### Ambiente de desenvolvimento:
+
+```bash
+npm run dev
 ```
+
+### Build para produção:
+
+```bash
+npm build
+```
+
+### Visualizar build:
+
+```bash
+npm preview
+```
+
+---
+
+## 🧹 **Lint**
+
+```bash
+npm lint
+```
+
+---
+
+## 📁 **Estrutura do Projeto (sugerida)**
+
+```
+src/
+ ├─ components/      → componentes reutilizáveis (shadcn + custom)
+ ├─ pages/           → páginas do portfólio
+ ├─ hooks/           → hooks personalizados
+ ├─ lib/             → configs, utils, helpers
+ ├─ styles/          → estilos globais
+ ├─ assets/          → imagens, ícones, fontes
+ └─ animations/      → framer-motion configs
+```
+
+---
+
+## 🎨 **Recursos do Projeto**
+
+- Tema **dark/light** com `next-themes`
+- Animações fluidas com **Framer Motion**
+- Componentes acessíveis com **Radix UI**
+- UI moderna com **shadcn**
+- Toasts bonitos via **Sonner**
+- Organização com **React Router DOM**
+- Cache e estado assíncrono via **React Query**
+
+---
+
+## 🔧 **Scripts**
+
+| Script    | Função                          |
+| --------- | ------------------------------- |
+| `dev`     | inicia servidor Vite            |
+| `build`   | compila TypeScript e gera build |
+| `lint`    | analisa código                  |
+| `preview` | mostra build localmente         |
+
+---
+
+## 🛠 **Configurações Importantes**
+
+O projeto usa `vite` sobrescrito com:
+
+```json
+"vite": "npm:rolldown-vite@7.2.5"
+```
+
+Isso garante um build super rápido e compatível com React 19.
+
+---
+
+## 🤝 **Contribuindo**
+
+Sinta-se livre pra abrir PRs, issues ou sugerir melhorias.
+
+---
+
+## 📄 **Licença**
+
+Este projeto é open-source, use como quiser.
