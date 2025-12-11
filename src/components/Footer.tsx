@@ -1,14 +1,20 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, PhoneCall } from "lucide-react";
 
 const socialLinks = [
+  {
+    icon: PhoneCall,
+    href: "https://api.whatsapp.com/send/?phone=5571996738280&text=ol%C3%A1+tudo+bem%2C+me+chamo+Danilo+e+sou+Desenvolvedor&type=phone_number&app_absent=0",
+    target: "_blank",
+    label: ".whatsapp",
+  },
   { icon: Github, href: "https://github.com/danilobrayann", label: "GitHub" },
   {
     icon: Linkedin,
     href: "https://www.linkedin.com/in/danilosantosdeveloper/",
     label: "LinkedIn",
   },
-  { icon: Mail, href: "DaniloBrayann@gmail.com", label: "Email" },
+  { icon: Mail, href: "mailto:DaniloBrayann@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -35,6 +41,7 @@ export function Footer() {
           >
             {socialLinks.map((social) => (
               <motion.a
+                target={"_blank"}
                 key={social.label}
                 href={social.href}
                 className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
